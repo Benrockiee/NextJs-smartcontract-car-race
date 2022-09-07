@@ -108,7 +108,9 @@ export default function RaceEntry() {
 
     return (
         <div className="p-5">
-            <h1 className="py-4 px-4 font-bold text-3xl"><em> Car Race Contest </em></h1>
+            <h1 className="py-4 px-4 font-bold text-3xl">
+                <em> Car Race Contest </em>
+            </h1>
             {raceAddress ? (
                 <>
                     <button
@@ -131,21 +133,45 @@ export default function RaceEntry() {
                         )}
                     </button>
 
-                    <div><h3 className="py-4 px-4 font-medium text-lg"> Entry Fee: {ethers.utils.formatUnits(entryFee, "ether")} ETH </h3></div>
-                    <div><h3 className="py-4 px-4 font-medium text-lg"> The current number of racers is: {numberOfRacers} </h3></div>
-                    <div><h3 className="py-4 px-4 font-medium text-lg"> The most previous winner was: {recentWinner} </h3></div>
+                    <div>
+                        <h3 className="py-4 px-4 font-medium text-lg">
+                            {" "}
+                            Entry Fee: {ethers.utils.formatUnits(entryFee, "ether")} ETH{" "}
+                        </h3>
+                    </div>
+                    <div>
+                        <h3 className="py-4 px-4 font-medium text-lg">
+                            {" "}
+                            The current number of racers is: {numberOfRacers}{" "}
+                        </h3>
+                    </div>
+                    <div>
+                        <h3 className="py-4 px-4 font-medium text-lg">
+                            {" "}
+                            The most previous winner was: {recentWinner}{" "}
+                        </h3>
+                    </div>
                 </>
             ) : (
-                <div> <h1 className="py-4 px-4 font-bold text-3xl text-red-600">  <em> Please connect to a supported chain(localhost) for this contest entry. Users are welcome to participate in
-                    this contest from any part of the Globe as long as they have what it takes to rule the streets with the wheels, people come and go but Racing stays! </em></h1>
-                    <div> <p className="py-4 px-4 font-bold text-3xl text-red-600"> <em> YOUR FANS ARE WAITING!</em> </p> </div>
-
+                <div>
+                    {" "}
+                    <h1 className="py-4 px-4 font-bold text-3xl text-red-600">
+                        {" "}
+                        <em>
+                            {" "}
+                            Please connect to a supported chain(localhost) for this contest entry,
+                            users are welcome to participate.{" "}
+                        </em>
+                    </h1>
+                    <div>
+                        {" "}
+                        <p className="py-4 px-4 font-bold text-3xl text-red-600">
+                            {" "}
+                            <em> YOUR FANS ARE WAITING!</em>{" "}
+                        </p>{" "}
                     </div>
-
-                   
+                </div>
             )}
-
         </div>
     )
 }
-
